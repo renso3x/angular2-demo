@@ -1,3 +1,40 @@
 <h1>
-  {{title}}
+	{{title}}
 </h1>
+<app-other>
+	<div>
+		<h1>Hello World!</h1>
+	</div>
+</app-other>
+
+<hr>
+<h3>Custom Directives</h3>
+<div apphighlight [highlighColor]="'blue'" [defaultColor]="'red'">This is a text</div>
+<hr>
+<h3>Structural Directive</h3>
+<h4>*ngIf</h4>
+<p *ngIf="hide">Click the button to disappear this text.</p>
+<button (click)="hideText()">Hide Text</button>
+<h4>*ngFor</h4>
+<ul>
+	<li *ngFor="let item of items; let i = index">{{item}} - (Index: {{i}})</li>
+</ul>
+<h4>*ngSwitch</h4>
+<div [ngSwitch]="value">
+	<p *ngSwitchCase="10">10</p>
+	<p *ngSwitchCase="50">50</p>
+	<p *ngSwitchCase="100">100</p>
+	<p *ngSwitchDefault>This my default case</p>
+</div>
+<hr>
+<h3>Logging Service</h3>
+<!-- #input is a local variable of <input>  -->
+<input type="text" #input>
+<button (click)="logMe(input.value)">Log</button>
+<button (click)="getLogs()">Show Logs</button>
+<button (click)="send(input.value)">Send Emit</button>
+<h6>Service Emitting</h6>
+<p>{{ status }}</p>
+<ul>
+	<li *ngFor="let log of logs">{{log}}</li>
+</ul>

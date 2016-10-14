@@ -1,0 +1,15 @@
+<ng-content></ng-content>
+<h3>DATA BINDING</h3>
+<ul>
+	<li [ngClass]="{redBorder: isRed}">{{ name }}</li>
+	<li [ngStyle]="{color: 'red'}">{{ age }}</li>
+</ul>
+
+<h3>PROPERTY BINDING</h3>
+<app-databinding [result]="10"></app-databinding>
+
+<h3>EVENT BINDING</h3>
+<button (click)="clickedMe()">Click Alert</button>
+
+<h3>CUSTON BINDING</h3>
+<app-eventbinding (clicked)="onClicked($event)"></app-eventbinding>
